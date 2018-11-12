@@ -14,7 +14,7 @@ go
 
 create table INVOICE
 (
-	InvoiceNumber int not null,
+	InvoiceNumber int identity(1,1) not null,
 	InvoiceDate date not null,
 	SubTotal float not null,
 	TaxPct float not null,
@@ -25,7 +25,7 @@ go
 
 create table PRODUCT
 (
-	ProductNumber int not null,
+	ProductNumber int identity(1,1) not null,
 	ProductType varchar not null,
 	ProductDescription varchar not null,
 	UnitPrice float not null,
@@ -35,8 +35,8 @@ go
 
 create table LINE_ITEM
 (
-	InvoiceNumber int not null,
-	LineNumber int not null,
+	InvoiceNumber int  not null,
+	LineNumber int identity(1,1) not null,
 	ProductNumber int not null,
 	Quantity int not null,
 	UnitPrice float not null,
