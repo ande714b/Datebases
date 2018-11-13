@@ -7,10 +7,10 @@ drop table if exists PET_Owner
 Create table PET_Owner
 (	
 	OwnerPK			int				identity NOT NULL,
-	OwnerLastName	varchar(50)			NOT NULL,
-	OwnerFirstName	varchar(50)			NOT NULL,		
-	OwnerPhone		varchar(50)			,
-	OwnerEmail		nvarchar(50)		NOT NULL,
+	OwnerLastName	varchar(50)		NOT NULL,
+	OwnerFirstName	varchar(50)		NOT NULL,		
+	OwnerPhone		varchar(50)		NULL,
+	OwnerEmail		nvarchar(50)	NOT NULL,
 	constraint		Owner_PK		primary key(OwnerPK)
 );
 go
@@ -18,10 +18,10 @@ go
 Create table PET
 (
 	PetID			int				identity NOT NULL,
-	PetName			varchar(50)			NOT NULL,
-	PetType			varchar(50)			NOT NULL,
-	PetBreed		varchar(50)			NOT NULL default 'Unknown',
-	PetDOB			datetime2			NULL,
+	PetName			varchar(50)		NOT NULL,
+	PetType			varchar(50)		NOT NULL,
+	PetBreed		varchar(50)		NULL default 'Unknown',
+	PetDOB			datetime2		NULL,
 	PetWeight		float			check (PetWeight <= 250) NOT NULL,
 	OwnerPK			int				NOT NULL,
 	constraint		PET_PK			primary key(PetID),

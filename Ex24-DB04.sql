@@ -12,7 +12,7 @@ insert into PET (PetName, PetType, PetBreed, PetDOB, PetWeight, OwnerPK) values
        ('Teddy', 'Cat', 'Cashmere', '2012-02-01', 10.5, 2),
        ('Fido', 'Dog', 'Std. Poodle', '2010-07-17', 28.5, 1),
        ('AJ', 'Dog', 'Collie Mix', '2011-05-05', 20.0, 3),
-       ('Cedro', 'Cat', 'Unknown', '2009-06-06', 9.5, 2),
-       ('Wooley', 'Cat', 'Unknown',null, 9.5, 2),      
+       ('Cedro', 'Cat',DEFAULT,'2009-06-06', 9.5, 2),
+       ('Wooley', 'Cat',default,null, 9.5, 2),      
 	  ('Buster', 'Dog', 'Border Collie', '2008-12-11', 25.0, 4)
 go
