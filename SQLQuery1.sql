@@ -4,6 +4,8 @@ drop table if exists PET
 
 drop table if exists PET_Owner
 
+drop table if exists BREED
+
 Create table PET_Owner
 (	
 	OwnerPK			int				identity NOT NULL,
@@ -14,6 +16,15 @@ Create table PET_Owner
 	constraint		Owner_PK		primary key(OwnerPK)
 );
 go
+
+Create table BREED
+(
+	BreedName varchar(50) not null,
+	MinWeight float null,
+	MaxWeight float null,
+	AverageLifeExpectancy int null,
+	constraint Breed_PK primary key(BreedName)
+)
 
 Create table PET
 (
@@ -28,7 +39,11 @@ Create table PET
 	constraint		PET_Owner_FK	foreign key(OwnerPK)
 								References PET_Owner(OwnerPK)
 									on delete no action
-									on update cascade
-	
+									on update cascade,
+	constraint		BREED_FK		foreign key(PetBreed)
+								References BREED(BreedName)
+								on delete no action
+								on update cascade
 );
 go
+

@@ -8,6 +8,14 @@ if OBJECT_ID('PET_Owner', 'U') is not null
 		('Trent', 'Miles',null, 'Miles.Trent@somewhere.com')
 go
 
+if OBJECT_ID('BREED', 'U') is not null		
+	insert into BREED (BreedName, MinWeight, MaxWeight, AverageLifeExpectancy) values
+	('Border Collie', 15.0, 22.5, 20),
+	('Cashmere', 10.0, 15.0, 12),
+	('Collie Mix', 17.5, 25.0, 18),
+	('Std. Poodle', 22.5, 30.0, 18),
+	('Unknown', null, null, null)
+go
 
 if OBJECT_ID('PET', 'U') is not null
        insert into PET (PetName, PetType, PetBreed, PetDOB, PetWeight, OwnerPK) values 
@@ -19,3 +27,5 @@ if OBJECT_ID('PET', 'U') is not null
        ('Wooley', 'Cat', 'Unknown',null, 9.5, 2),      
 	  ('Buster', 'Dog', 'Border Collie', '2008-12-11', 25.0, 4)
 go
+
+
